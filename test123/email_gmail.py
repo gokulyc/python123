@@ -1,6 +1,6 @@
 # Python code to illustrate Sending mail with attachments 
 # from your Gmail account 
-# email with attachment using python and google app code
+# email with attachment using python and google app code gokulyc
 # libraries to be imported 
 import smtplib 
 from email.mime.multipart import MIMEMultipart 
