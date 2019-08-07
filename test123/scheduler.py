@@ -1,22 +1,24 @@
 # Schedule Library imported 
 import schedule 
-import time 
-  
+import time,logging,sys
+
+logging.basicConfig(filename="test.log", level=logging.DEBUG)
 # Functions setup 
 def sudo_placement(): 
-    print("Get ready for Sudo Placement at Geeksforgeeks") 
+    # print("Get ready for Sudo Placement at Geeksforgeeks") 
+    logging.debug("Get ready for Sudo Placement at Geeksforgeeks")
   
 def good_luck(): 
-    print("Good Luck for Test") 
+    logging.debug("Good Luck for Test") 
   
 def work(): 
-    print("Study and work hard") 
+    logging.debug("Study and work hard") 
   
 def bedtime(): 
-    print("It is bed time go rest") 
+    logging.debug("It is bed time go rest") 
       
 def geeks(): 
-    print("Shaurya says Geeksforgeeks") 
+    logging.debug("Shaurya says Geeksforgeeks") 
   
 # Task scheduling 
 # After every 10mins geeks() is called.  
@@ -43,5 +45,9 @@ while True:
   
     # Checks whether a scheduled task  
     # is pending to run or not 
-    schedule.run_pending() 
-    time.sleep(1) 
+    try:
+        schedule.run_pending()
+        time.sleep(1) 
+    except KeyboardInterrupt:
+        logging.debug("program stopped")
+        sys.exit()
