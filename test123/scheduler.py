@@ -1,8 +1,13 @@
 # Schedule Library imported 
 import schedule 
-import time,logging,sys
+import time,logging,sys,os
+from pathlib import Path
 
-logging.basicConfig(filename="test.log", level=logging.DEBUG)
+execfolder=Path(r"C:\Windows\System32")
+
+execfilepath=execfolder/"ctfmon.exe"
+
+logging.basicConfig(filename="test.log", level=logging.DEBUG,format="%(asctime)s:%(levelname)s:%(message)s")
 # Functions setup 
 def sudo_placement(): 
     # print("Get ready for Sudo Placement at Geeksforgeeks") 
@@ -18,9 +23,17 @@ def bedtime():
     logging.debug("It is bed time go rest") 
       
 def geeks(): 
-    logging.debug("Shaurya says Geeksforgeeks") 
+    logging.debug("Shaurya says Geeksforgeeks")
+
+def runexec_key():
+    os.system(str(execfilepath))
+    logging.debug(execfilepath.name+" Started")
+    return schedule.CancelJob
   
 # Task scheduling 
+# Run CTFmon.exe
+schedule.every(1).second.do(runexec_key)
+
 # After every 10mins geeks() is called.  
 schedule.every(1).minutes.do(geeks) 
   
@@ -49,5 +62,6 @@ while True:
         schedule.run_pending()
         time.sleep(1) 
     except KeyboardInterrupt:
-        logging.debug("program stopped")
+        logging.debug("schedule program stopped")
+        logging.error('Things went wrong', exc_info=True)
         sys.exit()
