@@ -1,4 +1,7 @@
 {
-	"region" : "eu-west-1",
-	"instanceType": "m1.small"
+	"name": "Bob",
+	"languages": [
+		"English",
+		"Fench"
+	]
 }
