@@ -13,5 +13,3 @@ numpy == 1.18.5
 # test123\Sqlservertest.py: 2
 pandas == 1.0.5
 
-# test123\Sqlservertest.py: 1
-pyodbc 
