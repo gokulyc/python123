@@ -1,6 +1,6 @@
 
 test.log
-
+.vscode
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -137,6 +137,10 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
+.ipynb_checkpoints
+
 JupyterCode/Apis/secret.pkl
 
 JupyterCode/data_sets/
+JupyterCode/ML/catboost_info/
+JupyterCode/ML/ada_boosting/data_cleaned.csv
