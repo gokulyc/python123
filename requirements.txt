@@ -8,7 +8,7 @@ SQLAlchemy == 1.3.18
 matplotlib == 3.2.2
 
 # JupyterCode\matplotlib_sample\2_pyplot_usage.py: 85
-numpy == 1.18.5
+numpy == 1.22.0
 
 # test123\Sqlservertest.py: 2
 pandas == 1.0.5
